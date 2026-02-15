@@ -1,149 +1,49 @@
+document.addEventListener("DOMContentLoaded", function() {
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  text-align: center;
-  overflow-x: hidden;
-}
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const loveList = document.getElementById("loveList");
+  const imagenFinal = document.getElementById("imagenFinal");
 
-.container {
-  margin-top: 80px;
-}
+  const thingsILove = [
+"Tu sonrisa hermosa y preciosa mi nene precioso", "me encanta cuando me dedicas videos", "me encantan las cartas que me haces", "me encanta tus gustos musicales", "me encanta tu humor y como me haces reir", "eres mi persona favorita", "tu pierna es mia jejeje", "me encantan tus gatos", "me encanta como juegas tan bien cualquier juego de peleas", "me encanta como defiendes tu opinion", "amo que le des sentido a las canciones de amor", "amo tu piel, de verdad me encanta", "me gusta que te dejes dar besos en las manos", "eres capaz de todo lo que te propongas", "me encanta que literalmente no exista una persona igual a ti", "me encantan los apodos que te tengo", "quien es mi nene precioso?", "amo extrañarte todo el tiempo", "me encanta ver peliculas contigo", "no pongo emijis en todos pq me da pereza lmao", "eres mi nene precioso", "amo cuando te puedo tomar fotos en video llamada", "me encanta que sea atrevido", "Cómo me haces sentir cuado compartimos cosas que nos gustan❤️", "Tu forma de abrazarme(me encanta sentir es extraño y escaso pero extremadamente comodo calor de tu cuerpo) 🤍", "Tu personalidad tan extravagante que me enamora 🫶", "Tu voz cuando me hablas 🎶", "Cómo me miras con tus ojos preciosos (lo que mas amo en parte lmao)🥹", "Tu corazón tan bonito(que pronto me comere) 💕", "me encanta tu cara preciosa(cada que puedo le saco foto)", "Tu risa contagiosa(tambien de mis cosas favoritas pq te empiezas a reir de la nada) 😆", "Tu manera de amar tan apasionada e intensa(propiamente unico de ti)💞", "Simplemente tú ✨"
 
-/* GIF inicial */
+  ];
 
-.gif-inicial {
+  noBtn.addEventListener("mouseover", function () {
 
-  width: 220px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
 
-}
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 
-/* Imagen final */
+  });
 
-.imagen-final {
+  yesBtn.addEventListener("click", function() {
 
-  width: 300px;
-  margin-top: 30px;
-  border-radius: 20px;
-  display: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  animation: aparecer 1s ease;
+    loveList.style.display = "block";
 
-}
+    loveList.innerHTML = "";
 
-@keyframes aparecer {
+    thingsILove.forEach((item, index) => {
 
-  from {
+      setTimeout(() => {
 
-    opacity: 0;
-    transform: scale(0.8);
+        const li = document.createElement("li");
 
-  }
+        li.textContent = item;
 
-  to {
+        loveList.appendChild(li);
 
-    opacity: 1;
-    transform: scale(1);
+      }, index * 400);
 
-  }
+    });
 
-}
+    imagenFinal.style.display = "block";
 
-/* Título */
+  });
 
-h1 {
-
-  font-size: 3rem;
-  color: white;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-
-}
-
-/* Link canción */
-
-.song-link {
-
-  color: white;
-  text-decoration: none;
-  border-bottom: 2px solid white;
-
-}
-
-.song-link:hover {
-
-  color: pink;
-
-}
-
-/* Botones */
-
-button {
-
-  font-size: 1.3rem;
-  padding: 14px 28px;
-  margin: 15px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-
-}
-
-#yesBtn {
-
-  background-color: #ff4d6d;
-  color: white;
-
-}
-
-#noBtn {
-
-  background-color: gray;
-  color: white;
-
-}
-
-/* Lista */
-
-#loveList {
-
-  margin-top: 40px;
-  list-style: none;
-  padding: 0;
-  display: none;
-
-}
-
-#loveList li {
-
-  background: white;
-  margin: 10px auto;
-  padding: 12px;
-  width: 60%;
-  border-radius: 20px;
-  animation: fadeIn 0.6s ease;
-
-}
-
-@keyframes fadeIn {
-
-  from {
-
-    opacity: 0;
-    transform: translateY(15px);
-
-  }
-
-  to {
-
-    opacity: 1;
-    transform: translateY(0);
-
-  }
-
-}
+});
 
