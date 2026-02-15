@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "amo cuando te puedo tomar fotos en video llamada",
     "me encanta que sea atrevido",
     "Cómo me haces sentir cuado compartimos cosas que nos gustan❤️",
-    "Tu forma de abrazarme(me encanta sentir es extraño y escaso pero extremadamente comodo calor de tu cuerpo) 🤍",
+    "Tu forma de abrazarme(me encanta sentir el calor de tu cuerpo(es extraño y escaso pero extremadamente comodo)) 🤍",
     "Tu personalidad tan extravagante que me enamora 🫶",
     "Tu voz cuando me hablas 🎶",
     "Cómo me miras con tus ojos preciosos (lo que mas amo en parte lmao)🥹",
@@ -63,5 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
   });
+
 
 });
